@@ -1,0 +1,27 @@
+.Wrapper {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: center;
+    margin: 200px auto;
+    background-color: white;
+}
+
+
+.Welcome {
+    /* display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 50px; */
+}
+
+.LoginPage {
+    /* display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: 50px; */
+}

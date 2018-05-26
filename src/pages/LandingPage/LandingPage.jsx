@@ -1,0 +1,25 @@
+import React from 'react';
+import LoginForm from '../../components/LoginForm/LoginForm';
+import Authenticate from '../../components/Authenticate/Authenticate';
+import './LandingPage.css';
+
+const LandingPage = (props) => {
+    return (
+      <div className='Wrapper'>
+        <div className='Welcome'>
+            <h4>Welcome to</h4>
+            <h1>DevChat</h1>
+            {/* <p>Are you a web developer? Do you have questions? Or do you have advice for those with questions? The best site to ask questions and give advice.</p> */}
+        </div>
+        <div className='LoginPage'>
+            {/* <LoginForm 
+            {...props}
+            /> */}
+            <Authenticate {...props}/> 
+            <button onClick={props.updateLogin}>update login</button>
+        </div>
+      </div>
+    );
+  };
+  
+  export default LandingPage;
