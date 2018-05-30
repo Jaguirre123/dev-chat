@@ -8,6 +8,8 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
+import TopicsPage from '../TopicsPage/TopicsPage';
+import ChatRoomPage from '../ChatRoomPage/ChatRoomPage';
 import userService from '../../utils/userService';
 
 
@@ -42,15 +44,30 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Route path="/" render={(props) => (
-          <LandingPage
-            login={this.state.login} 
-            updateLogin={this.updateLogin} 
-            handleSignup={this.handleSignup}
-            handleLogin={this.handleLogin}
-            {...props}
-          />
-        )} />
+        <Router>
+          <Switch>
+            <Route exact path="/" render={(props) => (
+              <LandingPage
+                login={this.state.login} 
+                updateLogin={this.updateLogin} 
+                handleSignup={this.handleSignup}
+                handleLogin={this.handleLogin}
+                {...props}
+              />
+            )} />
+
+            <Route exact path="/topics" render={(props) => (
+              <TopicsPage 
+                handleLogout={this.handleLogout}
+                user={this.state.user}
+              />
+            )} />
+
+            <Route path='/chatroom/:namespace' render={(props) => (
+              <ChatRoomPage {...props} />
+            )} />
+          </Switch>
+        </Router>
       </div>
     );
   }

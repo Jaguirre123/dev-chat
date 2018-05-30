@@ -1,3 +1,7 @@
+body {
+    background-color: #272822;
+}
+
 .Wrapper {
     display: flex; 
     flex-direction: row;
@@ -6,22 +10,27 @@
     align-items: flex-start;
     align-content: center;
     margin: 200px auto;
-    background-color: white;
+    /* background-color: white; */
 }
-
 
 .Welcome {
-    /* display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-start;
-    margin-right: 50px; */
+    width: 50%;
+    word-wrap: break-word;
 }
 
-.LoginPage {
-    /* display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-end;
-    margin-left: 50px; */
+.mainH1 {
+    color: #F92672;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
 }
+
+.welcome {
+    color: #66D9EF;
+    font-size: 20px;
+ }
+
+ .intro {
+    color: #A6E22E;
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
+ }

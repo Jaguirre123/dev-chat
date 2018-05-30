@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import userService from '../../utils/userService';
+import './LoginForm.css';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class LoginForm extends Component {
     .then(() => {
       this.props.handleLogin();
       // TODO: Pass history down here
-      this.props.history.push('/chatroom');
+      this.props.history.push('/topics');
     })
     .catch(err => alert('Invalid Credentials!'));
   }

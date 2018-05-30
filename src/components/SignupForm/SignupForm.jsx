@@ -27,7 +27,8 @@ class SignupForm extends Component {
         // successfully signed up - show GamePage
         .then(() => {
           this.props.handleSignup();
-          this.props.history.push('/')})
+          this.props.history.push('/topics')
+        })
         // invalid user data
         .catch(err => this.props.updateMessage(err.message));
     }
@@ -68,8 +69,8 @@ class SignupForm extends Component {
             </div>
             <div className="form-group">
               <div className="col-sm-12 text-center">
-                 <button className="btn btn-block btn-default">Sign up</button>&nbsp;&nbsp;&nbsp;
-                {/* <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp; */}
+                 {/* <button className="btn btn-block btn-default">Sign up</button>&nbsp;&nbsp;&nbsp; */}
+                <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
                 {/* <Link to='/'>Cancel</Link> */}
               </div>
             </div>
