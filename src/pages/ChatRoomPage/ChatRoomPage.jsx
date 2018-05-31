@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import NavBar from '../../components/NavBar/NavBar';
 
 
 class ChatRoomPage extends Component {
@@ -25,6 +26,7 @@ class ChatRoomPage extends Component {
         return (
             this.state.topic ?
                 <div>
+                    <NavBar />
                     <h1>{this.props.matchtitle}</h1>
                     <p>route param {this.props.match.params.namespace}</p>
                 </div>

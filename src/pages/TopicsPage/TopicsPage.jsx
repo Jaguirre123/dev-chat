@@ -11,12 +11,13 @@ class TopicsPage extends Component {
         super(props);
         this.state = {
             topics: [],
+            initialPage: 1, 
+            pageSize: 12, 
             pageOfTopics: []
         };
-        this.onChangePage = this.onChangePage.bind(this);
     } 
 
-    onChangePage(pageOfTopics) {
+    onChangePage = (pageOfTopics) => {
         // update state with new page of items
         this.setState({ pageOfTopics: pageOfTopics });
     }
@@ -39,10 +40,13 @@ class TopicsPage extends Component {
                  <NavBar user={this.props.user} 
                      handleLogout={this.props.handleLogout}
                  />
-                 <TopicList topics={this.state.topics}/>
+                 <TopicList pageOfTopics={this.state.pageOfTopics}/>
                  {/* <Footer /> */}
-
-                 <Pagination items={this.state.topics} onChangePage={this.onChangePage} />
+                 <Pagination topics={this.state.topics} 
+                             onChangePage={this.onChangePage}
+                             pageSize={this.state.pageSize}
+                             initialPage={this.state.initialPage} />
+                             
             </div>
          )
     }

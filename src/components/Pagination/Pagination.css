@@ -1,0 +1,30 @@
+.paginationDiv {
+    text-align: center;
+}
+
+.pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-inline-box;
+    padding-left: 0;
+    list-style: none;
+    border-radius: .25rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#page-item {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+}
+
+#page-item:hover {
+    background-color: #F92672;
+    color: #A6E22E;
+}

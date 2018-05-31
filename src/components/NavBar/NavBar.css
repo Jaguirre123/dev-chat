@@ -2,5 +2,23 @@
     color: #F92672 !important;
     font-size: 30px;
     font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 2px 3px white;
 }
 
+ul {
+    font-size: 17px;
+}
+
+.nav-item {
+    padding-right: 15px;
+}
+
+.logout {
+    margin-top: 5%;
+}
+
+/* @media (max-width: 800px) {
+    .navbar-brand {
+        text-align: left;
+    }
+} */

@@ -11,14 +11,16 @@ import LandingPage from '../LandingPage/LandingPage';
 import TopicsPage from '../TopicsPage/TopicsPage';
 import ChatRoomPage from '../ChatRoomPage/ChatRoomPage';
 import userService from '../../utils/userService';
-
+import socket from '../../utils/socket';
+import tokenService from '../../utils/tokenService';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      login: false
+      login: false,
+      user: userService.getUser()
     }
   }
 
@@ -31,14 +33,21 @@ class App extends Component {
   handleLogout = () => {
     userService.logout();
     this.setState({user: null});
+    if (this.state.user) socket.emit('register', null);
   }
 
   handleSignup = () => {
     this.setState({user: userService.getUser()});
+    if (this.state.user) socket.emit('register', tokenService.getToken());
   }
 
   handleLogin = () => {
     this.setState({user: userService.getUser()});
+    if (this.state.user) socket.emit('register', tokenService.getToken());
+  }
+
+  componentDidMount() {
+    if (this.state.user) socket.emit('register', tokenService.getToken());
   }
 
   render() {
