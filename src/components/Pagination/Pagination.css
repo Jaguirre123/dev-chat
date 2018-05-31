@@ -25,6 +25,42 @@
 }
 
 #page-item:hover {
-    background-color: #F92672;
-    color: #A6E22E;
+    background-color: #6c757d;
+    color: #FFF;
+}
+
+#first:hover { 
+    background-color: #6c757d;
+    color: #FFF; 
+}
+
+#last:hover {
+    background-color: #6c757d;
+    color: #FFF;
+}
+
+#first {
+    border-radius: 10px 0px 0px 10px;
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+}
+
+#last {
+    border-radius: 0px 10px 10px 0px;
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
 }

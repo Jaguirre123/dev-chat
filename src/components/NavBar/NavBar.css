@@ -1,8 +1,8 @@
 .navbar-brand { 
-    color: #F92672 !important;
+    color: #79D6FF !important;
     font-size: 30px;
     font-family: 'Orbitron', sans-serif;
-    text-shadow: 0 2px 3px white;
+    /* text-shadow: 0 0px 3px white; */
 }
 
 ul {
@@ -17,8 +17,3 @@ ul {
     margin-top: 5%;
 }
 
-/* @media (max-width: 800px) {
-    .navbar-brand {
-        text-align: left;
-    }
-} */

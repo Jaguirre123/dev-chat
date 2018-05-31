@@ -37,7 +37,6 @@ class Pagination extends React.Component {
         currentPage = currentPage || 1;
         pageSize = pageSize || 12;
         var totalPages = Math.ceil(totalItems / pageSize);
- 
         var startPage, endPage;
         if (totalPages <= 12) {
             startPage = 1;
@@ -79,7 +78,7 @@ class Pagination extends React.Component {
         return (
             <div className='paginationDiv'>
                 <ul className="pagination">
-                    <li id="page-item" className={pager.currentPage === 1 ? 'disabled' : ''}>
+                    <li id="first" className={pager.currentPage === 1 ? 'disabled' : ''}>
                         <a onClick={() => this.setPage(1)}>First</a>
                     </li>
                     <li id="page-item" className={pager.currentPage === 1 ? 'disabled' : ''}>
@@ -93,7 +92,7 @@ class Pagination extends React.Component {
                     <li id="page-item" className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
                         <a onClick={() => this.setPage(pager.currentPage + 1)}>Next</a>
                     </li>
-                    <li id="page-item" className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
+                    <li id="last" className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
                         <a onClick={() => this.setPage(pager.totalPages)}>Last</a>
                     </li>
                 </ul>

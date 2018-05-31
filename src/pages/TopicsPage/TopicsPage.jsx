@@ -4,13 +4,14 @@ import './TopicsPage.css'
 import NavBar from '../../components/NavBar/NavBar';
 import TopicList from '../../components/TopicList/TopicList';
 import Pagination from '../../components/Pagination/Pagination';
-// import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 
 class TopicsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             topics: [],
+            filteredTopics: [],
             initialPage: 1, 
             pageSize: 12, 
             pageOfTopics: []
@@ -26,8 +27,16 @@ class TopicsPage extends Component {
         fetch('/api/topics')
         .then(res => res.json()) 
         .then(topics => {
-            this.setState({topics});
+            this.setState({topics, filteredTopics: topics});
         })
+    }
+
+    filterList = (event) => {
+        var updatedList = this.state.topics.filter(function(topic){
+          return topic.title.toLowerCase().search(
+            event.target.value.toLowerCase()) !== -1;
+        });
+        this.setState({filteredTopics: updatedList});
     }
 
     componentDidMount() {
@@ -38,15 +47,16 @@ class TopicsPage extends Component {
         return (
             <div>
                  <NavBar user={this.props.user} 
-                     handleLogout={this.props.handleLogout}
-                 />
+                     handleLogout={this.props.handleLogout}/>
+                    <fieldset className="form-group">
+                        <input type="text" className="form-control form-control-lg" placeholder="Search" onChange={this.filterList}/>
+                     </fieldset>
                  <TopicList pageOfTopics={this.state.pageOfTopics}/>
-                 {/* <Footer /> */}
-                 <Pagination topics={this.state.topics} 
+                 <Pagination topics={this.state.filteredTopics} 
                              onChangePage={this.onChangePage}
                              pageSize={this.state.pageSize}
                              initialPage={this.state.initialPage} />
-                             
+                <Footer />          
             </div>
          )
     }

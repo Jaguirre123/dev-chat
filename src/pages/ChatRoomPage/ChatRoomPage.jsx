@@ -27,7 +27,7 @@ class ChatRoomPage extends Component {
             this.state.topic ?
                 <div>
                     <NavBar />
-                    <h1>{this.props.matchtitle}</h1>
+                    <h1>{this.props.match.title}</h1>
                     <p>route param {this.props.match.params.namespace}</p>
                 </div>
             :
