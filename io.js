@@ -28,7 +28,7 @@ function init(http) {
         socket.on('new-chat', function(chat) {
             console.log(`received new-chat ${JSON.stringify(chat)}`);
             // persist chat in topic document
-            chat.topic.push()
+            
             io.in(socket.room).emit('new-chat', chat);
         })
 
