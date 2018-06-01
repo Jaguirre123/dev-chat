@@ -49,7 +49,7 @@ class ChatRoomPage extends Component {
                     <NavBar />
                     <h1 className='chatRoomTitle'>{this.state.topic.title} Chatroom</h1>
                     <div className='chats'>
-                        {this.state.topic.chats.map((chat, idx )=> <p key={idx}><hr />{chat.content}</p>)}
+                        {this.state.topic.chats.map((chat, idx )=> <div key={idx}><hr /><span>{chat.content}</span></div>)}
                     </div>
                     <textarea ref={(ta) => this.chatInput = ta}></textarea>
                     <button className='btn btn-outline-secondary' onClick={this.handleSendChat}><i className="fas fa-paper-plane"></i></button>

@@ -2,7 +2,8 @@
     color: #79D6FF !important;
     font-size: 30px;
     font-family: 'Orbitron', sans-serif;
-    /* text-shadow: 0 0px 3px white; */
+    border-right: 1px inset gray;
+    padding-right: 15px;
 }
 
 ul {
@@ -10,10 +11,27 @@ ul {
 }
 
 .nav-item {
-    padding-right: 15px;
+    padding-right: 10px;
+}
+
+.nav-link, .NavBar-link {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.nav-link:hover {
+    color: #79D6FF !important;
+}
+
+.NavBar-link {
+    color: white;
+}
+
+.NavBar-link:hover {
+    color: #79D6FF !important;
+    text-decoration: none !important;
 }
 
 .logout {
-    margin-top: 5%;
+    margin-top: 4.3%;
 }
 

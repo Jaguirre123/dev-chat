@@ -5,7 +5,6 @@ import './NavBar.css';
 const NavBar = (props) => {
   return (
     <div>
-      {/*<span className='NavBar-welcome'>WELCOME</span> */}
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link to='/topics' className="navbar-brand" > > DevChat</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +16,7 @@ const NavBar = (props) => {
                         <Link to='/topics' className="nav-link">Home</Link>
                     </li>
                     <li className="nav-item logout">
-                        <Link to='' className='NavBar-link' onClick={props.handleLogout}>LOG OUT</Link>
+                        <Link to='' className='NavBar-link' onClick={props.handleLogout}>Log Out</Link>
                     </li>
                 </ul>
             </div>

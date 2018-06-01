@@ -1,5 +1,6 @@
 var jwt = require('jsonwebtoken');
 var SECRET = process.env.SECRET;
+var Topic = require('./models/topic');
 
 var io;
 
@@ -28,7 +29,10 @@ function init(http) {
         socket.on('new-chat', function(chat) {
             console.log(`received new-chat ${JSON.stringify(chat)}`);
             // persist chat in topic document
-            
+            Topic.findOne({chatNamespace: socket.room}).then(topic => {
+                topic.chats.push(chat);
+                topic.save();
+            })
             io.in(socket.room).emit('new-chat', chat);
         })
 
