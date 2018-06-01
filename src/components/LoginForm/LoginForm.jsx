@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import userService from '../../utils/userService';
 import './LoginForm.css';
 
@@ -23,7 +23,6 @@ class LoginForm extends Component {
     userService.login(this.state)
     .then(() => {
       this.props.handleLogin();
-      // TODO: Pass history down here
       this.props.history.push('/topics');
     })
     .catch(err => alert('Invalid Credentials!'));
@@ -32,7 +31,7 @@ class LoginForm extends Component {
   render() {
     return (
       <div>
-        <header className="header-footer"><h3>Log In:</h3></header>
+        <header className="header-footer"><h3>Log In</h3></header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">
             <div className="col-sm-12">
@@ -47,7 +46,7 @@ class LoginForm extends Component {
           <div className="form-group">
             <div className="col-sm-12 text-center">
               <button className="btn btn-block btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
-              <p>Dont have an account yet?{/* <Link to='/'>Cancel</Link> */}</p>
+              <p className='signUp'>Don't have and account? <a className='signUpLink' onClick={this.props.updateLogin}>Sign Up</a></p>
             </div>
           </div>
         </form>

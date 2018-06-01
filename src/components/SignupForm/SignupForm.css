@@ -1,17 +1,12 @@
-.header-footer {
-    color: #66D9EF;
-    text-align: center;
-}
-
-.signUp {
+.login {
     color: #F92672;
 }
 
-.signUpLink {
+.loginLink {
     color: #66D9EF !important;
     cursor: pointer;
 }
 
-.signUpLink:hover {
+.loginLink:hover {
     text-decoration: underline !important;
 }

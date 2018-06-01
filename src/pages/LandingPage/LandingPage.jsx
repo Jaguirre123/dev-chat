@@ -1,6 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import LoginForm from '../../components/LoginForm/LoginForm';
+// import {Link} from 'react-router-dom';
 import Authenticate from '../../components/Authenticate/Authenticate';
 import './LandingPage.css';
 
@@ -14,11 +13,7 @@ const LandingPage = (props) => {
               <p className='intro'>Are you a web developer? Do you have questions? Or do you have advice for those with questions? The best site to ask questions and give advice.</p>
           </div>
           <div className='LoginPage'>
-              {/* <LoginForm 
-              {...props}
-              /> */}
               <Authenticate {...props}/> 
-              <button onClick={props.updateLogin}>update login</button>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import './TopicsPage.css'
 import NavBar from '../../components/NavBar/NavBar';
 import TopicList from '../../components/TopicList/TopicList';
@@ -19,7 +19,6 @@ class TopicsPage extends Component {
     } 
 
     onChangePage = (pageOfTopics) => {
-        // update state with new page of items
         this.setState({ pageOfTopics: pageOfTopics });
     }
 
@@ -46,13 +45,13 @@ class TopicsPage extends Component {
     render() {
         return (
             <div>
-                 <NavBar user={this.props.user} 
+                <NavBar user={this.props.user} 
                      handleLogout={this.props.handleLogout}/>
-                    <fieldset className="form-group">
-                        <input type="text" className="form-control form-control-lg" placeholder="Search" onChange={this.filterList}/>
-                     </fieldset>
-                 <TopicList pageOfTopics={this.state.pageOfTopics}/>
-                 <Pagination topics={this.state.filteredTopics} 
+                <fieldset className="form-group search">
+                    <input type="text" className="form-control form-control-lg" placeholder="Search..." onChange={this.filterList}/>
+                </fieldset>
+                <TopicList pageOfTopics={this.state.pageOfTopics}/>
+                <Pagination topics={this.state.filteredTopics} 
                              onChangePage={this.onChangePage}
                              pageSize={this.state.pageSize}
                              initialPage={this.state.initialPage} />

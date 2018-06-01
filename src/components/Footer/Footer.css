@@ -5,12 +5,13 @@ footer {
     justify-content: space-between;
     padding: .5rem 1rem;
     background-color: #343a40 !important;
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
 }
 
 .footerUl {
     list-style: none;
-    text-align: center !important;
+    /* text-align: center !important; */
 }
 
 .footerLi {
@@ -36,4 +37,11 @@ footer p {
     color: #79D6FF;
     /* text-shadow: 0 1px 2px white; */
     font-family: 'Orbitron', sans-serif;
+}
+
+@media(max-width: 500px) {
+    footer {
+        text-align: center !important;
+        display: block;
+    }
 }

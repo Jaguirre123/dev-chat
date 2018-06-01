@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import userService from '../../utils/userService';
+import './SignupForm.css';
 
 class SignupForm extends Component {
     constructor(props) {
@@ -24,23 +25,25 @@ class SignupForm extends Component {
     handleSubmit = (e) => {
       e.preventDefault();
       userService.signup(this.state)
-        // successfully signed up - show GamePage
         .then(() => {
           this.props.handleSignup();
           this.props.history.push('/topics')
         })
         // invalid user data
-        .catch(err => this.props.updateMessage(err.message));
+        .catch(err => {
+            console.log(err)
+            this.props.updateMessage(err.message)
+        });
     }
   
     isFormInvalid() {
-      return !(this.state.name && this.state.email && this.state.password === this.state.passwordConf);
+      return !(this.state.firstName && this.state.lastName && this.state.email && this.state.password === this.state.passwordConf);
     }
   
     render() {
       return (
         <div>
-          <header className="header-footer">Sign Up</header>
+          <header className="header-footer"><h3>Sign Up</h3></header>
           <form className="form-horizontal" onSubmit={this.handleSubmit} >
             <div className="form-group">
               <div className="col-sm-12">
@@ -69,9 +72,8 @@ class SignupForm extends Component {
             </div>
             <div className="form-group">
               <div className="col-sm-12 text-center">
-                 {/* <button className="btn btn-block btn-default">Sign up</button>&nbsp;&nbsp;&nbsp; */}
-                <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
-                {/* <Link to='/'>Cancel</Link> */}
+                <button className="btn btn-default btn-block" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;&nbsp;
+                <p className='login'>Already have an account? <a className='loginLink' onClick={this.props.updateLogin}>Login</a></p>
               </div>
             </div>
           </form>

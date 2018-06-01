@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
 import {
   BrowserRouter as Router,
   Switch,
@@ -55,15 +54,18 @@ class App extends Component {
       <div>
         <Router>
           <Switch>
-            <Route exact path="/" render={(props) => (
-              <LandingPage
-                login={this.state.login} 
-                updateLogin={this.updateLogin} 
-                handleSignup={this.handleSignup}
-                handleLogin={this.handleLogin}
-                {...props}
-              />
-            )} />
+            <Route exact path="/" render={(props) => {
+              return this.state.user ?
+                <Redirect to='/topics' />
+              :
+                <LandingPage
+                  login={this.state.login} 
+                  updateLogin={this.updateLogin} 
+                  handleSignup={this.handleSignup}
+                  handleLogin={this.handleLogin}
+                  {...props}
+                />
+            }} />
 
             <Route exact path="/topics" render={(props) => (
               <TopicsPage 
@@ -73,7 +75,7 @@ class App extends Component {
             )} />
 
             <Route path='/chatroom/:namespace' render={(props) => (
-              <ChatRoomPage {...props} />
+              <ChatRoomPage {...props} user={this.state.user} />
             )} />
           </Switch>
         </Router>

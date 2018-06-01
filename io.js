@@ -14,10 +14,23 @@ function init(http) {
            }); 
         });
 
-        socket.on('new-chat', function(message) {
+        socket.on('join-topic', function(topicNamespace) {
             if (!socket.user) return;
-            //create chat message
+            socket.room = topicNamespace;
+            socket.join(topicNamespace);
         });
+        
+        socket.on('leave-topic', function(topicNamespace) {
+            socket.room = null;
+            socket.leave(topicNamespace);
+        });
+
+        socket.on('new-chat', function(chat) {
+            console.log(`received new-chat ${JSON.stringify(chat)}`);
+            // persist chat in topic document
+            chat.topic.push()
+            io.in(socket.room).emit('new-chat', chat);
+        })
 
     });
 }

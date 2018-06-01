@@ -17,7 +17,7 @@ class Authenticate extends Component {
             <div>
             {this.props.login ? <SignupForm {...this.props} 
                         updateMessage={this.updateMessage} 
-                        handleSignup={this.handleSignup}/>
+                        handleSignup={this.props.handleSignup}/>
                     : 
                         <LoginForm {...this.props}/>}
             </div>

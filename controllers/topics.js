@@ -2,7 +2,7 @@ var Topic = require('../models/topic');
 
 
 function getAllTopics(req, res) {
-    Topic.find({})
+    Topic.find({}).sort({title: 1})
     .then(topics => res.json(topics));
 }
 
