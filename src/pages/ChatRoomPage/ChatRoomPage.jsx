@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import NavBar from '../../components/NavBar/NavBar';
+import Footer from '../../components/Footer/Footer';
 import socket from '../../utils/socket';
-
+import './ChatRoomPage.css';
 class ChatRoomPage extends Component {
     constructor(props) {
         super(props);
@@ -46,13 +47,14 @@ class ChatRoomPage extends Component {
             this.state.topic ?
                 <div style={{backgroundColor: 'white'}}>
                     <NavBar />
-                    <h1>{this.state.topic.title}</h1>
-                    <p>route param {this.props.match.params.namespace}</p>
+                    <h1 className='chatRoomTitle'>{this.state.topic.title} Chatroom</h1>
+                    {/* <p>route param {this.props.match.params.namespace}</p> */}
                     <ul>
                         {this.state.topic.chats.map((chat, idx )=> <p key={idx}>{chat.content}</p>)}
                     </ul>
                     <textarea ref={(ta) => this.chatInput = ta}></textarea>
                     <button className='btn btn-outline-secondary' onClick={this.handleSendChat}><i className="fas fa-paper-plane"></i></button>
+                    <Footer/>
                 </div>
             :
                 null
