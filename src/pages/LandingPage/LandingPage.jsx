@@ -5,7 +5,6 @@ import './LandingPage.css';
 
 const LandingPage = (props) => {
     return (
-      <div className='mainDiv'>
         <div className='Wrapper'>
           <div className='Welcome'>
               <h4 className='welcome'>Welcome to</h4>
@@ -16,7 +15,6 @@ const LandingPage = (props) => {
               <Authenticate {...props}/> 
           </div>
         </div>
-      </div>
     );
   };
   
