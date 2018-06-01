@@ -48,10 +48,9 @@ class ChatRoomPage extends Component {
                 <div style={{backgroundColor: 'white'}}>
                     <NavBar />
                     <h1 className='chatRoomTitle'>{this.state.topic.title} Chatroom</h1>
-                    {/* <p>route param {this.props.match.params.namespace}</p> */}
-                    <ul>
-                        {this.state.topic.chats.map((chat, idx )=> <p key={idx}>{chat.content}</p>)}
-                    </ul>
+                    <div className='chats'>
+                        {this.state.topic.chats.map((chat, idx )=> <p key={idx}><hr />{chat.content}</p>)}
+                    </div>
                     <textarea ref={(ta) => this.chatInput = ta}></textarea>
                     <button className='btn btn-outline-secondary' onClick={this.handleSendChat}><i className="fas fa-paper-plane"></i></button>
                     <Footer/>

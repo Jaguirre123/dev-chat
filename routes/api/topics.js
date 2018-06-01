@@ -6,5 +6,4 @@ router.get('/', topicsCtrl.getAllTopics);
 router.get('/:namespace', topicsCtrl.getTopicByNamespace);
 
 
-
 module.exports = router;
