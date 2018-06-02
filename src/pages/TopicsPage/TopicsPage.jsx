@@ -27,14 +27,14 @@ class TopicsPage extends Component {
         .then(res => res.json()) 
         .then(topics => {
             this.setState({topics, filteredTopics: topics});
-        })
+        });
     }
 
     filterList = (event) => {
-        var updatedList = this.state.topics.filter(function(topic){
-          return topic.title.toLowerCase().search(
-            event.target.value.toLowerCase()) !== -1;
-        });
+        var updatedList = event.target.value ? 
+            this.state.topics.filter(t => t.title.toLowerCase().includes(event.target.value.toLowerCase()))
+        :
+            this.state.topics;
         this.setState({filteredTopics: updatedList});
     }
 

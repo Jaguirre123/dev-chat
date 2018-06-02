@@ -18,12 +18,24 @@ function init(http) {
         socket.on('join-topic', function(topicNamespace) {
             if (!socket.user) return;
             socket.room = topicNamespace;
-            socket.join(topicNamespace);
+            socket.join(topicNamespace, () => {
+                io.in(topicNamespace).clients((err, clients) => {
+                    let sockets = io.of('/').adapter.nsp.sockets;
+                    let users = clients.map(client => sockets[client].user);
+                    io.to(topicNamespace).emit('topic-user-list', users)
+                });
+            });
         });
         
         socket.on('leave-topic', function(topicNamespace) {
             socket.room = null;
-            socket.leave(topicNamespace);
+            socket.leave(topicNamespace, function() {
+                io.in(topicNamespace).clients((err, clients) => {
+                    let sockets = io.of('/').adapter.nsp.sockets;
+                    let users = clients.map(client => sockets[client].user);
+                    io.to(topicNamespace).emit('topic-user-list', users)
+                });
+            });
         });
 
         socket.on('new-chat', function(chat) {
