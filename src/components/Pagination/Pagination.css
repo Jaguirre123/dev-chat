@@ -64,3 +64,9 @@
     border: 1px solid #dee2e6;
     cursor: pointer;
 }
+
+@media(max-width: 500px) {
+    #page-item {
+        padding: 5px;
+    }
+}

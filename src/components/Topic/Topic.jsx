@@ -23,7 +23,7 @@ class Topic extends Component {
                         <div className="d-flex justify-content-between align-items-center">
                             <Link to={`/chatroom/${topic.chatNamespace}`} className="btn btn-block btn-outline-secondary text-truncate">Join ChatRoom</Link>
                         </div>
-                            <small className="text-muted">{this.state.count} Users</small>
+                            <small className="text-muted">Current Users: {this.state.count}</small>
                     </div>
                 </div>
             </div>

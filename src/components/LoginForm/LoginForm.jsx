@@ -30,7 +30,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className='loginForm'>
         <header className="header-footer"><h3>Log In</h3></header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">
@@ -45,8 +45,8 @@ class LoginForm extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-block btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
-              <p className='signUp'>Don't have and account? <a className='signUpLink' onClick={this.props.updateLogin}>Sign Up</a></p>
+              <button className="btn btn-block btn-dark">Log In</button>&nbsp;&nbsp;&nbsp;
+              <p className='signUp'>Don't have and account? <a className='signUpLink' onClick={this.props.updateLogin}><i>Sign Up</i></a></p>
             </div>
           </div>
         </form>

@@ -1,6 +1,7 @@
 .header-footer {
-    color: #66D9EF;
-    text-align: center;
+    color: #000;
+    font-family: 'Orbitron', sans-serif;
+    /* text-align: center; */
 }
 
 .signUp {
@@ -8,10 +9,25 @@
 }
 
 .signUpLink {
-    color: #66D9EF !important;
+    color: #000 !important;
     cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .signUpLink:hover {
     text-decoration: underline !important;
+}
+
+.loginForm {
+    background-color: #e2e3e5;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px inset white;
+}
+
+@media(max-width: 500px) {
+    .loginForm {
+        margin: 20px auto;
+        width: 90%;
+    }
 }
