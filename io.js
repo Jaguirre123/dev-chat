@@ -39,12 +39,12 @@ function init(http) {
         });
 
         socket.on('new-chat', function(chat) {
-            console.log(`received new-chat ${JSON.stringify(chat)}`);
             Topic.findOne({chatNamespace: socket.room}).then(topic => {
                 topic.chats.push(chat);
-                topic.save();
+                topic.save(function() {
+                    io.in(socket.room).emit('new-chat', topic.chats[topic.chats.length - 1]);
+                });
             })
-            io.in(socket.room).emit('new-chat', chat);
         })
 
     });
