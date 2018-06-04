@@ -67,7 +67,7 @@ class ChatRoomPage extends Component {
                             </aside>                            
                             <section className='chatListContainer'>
                                 <div className='chats'>
-                                    {this.state.topic.chats.map((chat, idx) => <div className='chatBox' key={idx}><p className='chatName'>{chat.userName} <span className='datetime'>{new Date(chat.createdAt).toLocaleString().replace(/:\d\d /, ' ',).replace(',', ' -')}</span></p><hr /><p className='chatContent'>{chat.content}</p></div>)}
+                                    {this.state.topic.chats.map((chat, idx) => <div className='chatBox' key={idx}><p className='chatName'>{chat.userName}<span className='datetime'>{new Date(chat.createdAt).toLocaleString().replace(/:\d\d /, ' ',).replace(',', ' -')}</span></p><hr /><p className='chatContent'>{chat.content}</p></div>)}
                                 </div>
                                 <div className="input-group">
                                     <textarea ref={(ta) => this.chatInput = ta} className="form-control custom-control chat-input" rows="3" placeholder='Type here...'></textarea>
