@@ -119,6 +119,15 @@ textarea {
     margin: 15px auto;
 }
 
+.emailChat {
+    color: #FFF;
+    font-size: 15px !important;
+}
+
+.emailChat:hover {
+    color: #79D6FF !important;
+}
+
 @media(max-width: 700px) {
     .whosOnlineListContainer {
         display: block !important;
@@ -137,6 +146,14 @@ textarea {
     .chatRoomTitle {
         margin: 0 auto;
     }
-    
 }
 
+@media(max-width: 450px) {
+    .datetime {
+        float: left;
+        font-style: italic;
+        font-family: monospace;
+        font-size: 15px;
+    }
+    
+}

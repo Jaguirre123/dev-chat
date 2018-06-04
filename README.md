@@ -5,9 +5,9 @@ DevChat is a chat app where developers can ask other developers quetions and als
 ## ScreenShots
 <img src="https://i.imgur.com/DsQKE1X.png" width="95%"/>
 <br>
-<img src="https://i.imgur.com/wbPT5IG.png" width="95%"/>
+<img src="https://i.imgur.com/MDmM8bg.png" width="95%"/>
 <br>
-<img src="https://i.imgur.com/cGWwH5W.png" width="95%"/>
+<img src="https://i.imgur.com/m3YIoSC.png" width="95%"/>
 
 
 
