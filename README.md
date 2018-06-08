@@ -29,6 +29,10 @@ DevChat is a chat app where developers can ask other developers quetions and als
 
 ## Link to App
 
+* To try out DevChat login with this information
+* Email: user@email.com
+* Password: demo
+
 [Click here to View app!](http://dev-chat-react.herokuapp.com/)
 
 
