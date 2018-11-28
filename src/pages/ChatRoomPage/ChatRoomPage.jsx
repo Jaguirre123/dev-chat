@@ -14,7 +14,7 @@ class ChatRoomPage extends Component {
         }
     }
 
-    getTopicByNamespace = () => {
+    getTopicByNamespace() {
         fetch(`/api/topics/${this.props.match.params.namespace}`)
             .then(res => res.json())
             .then(topic => {
@@ -27,7 +27,7 @@ class ChatRoomPage extends Component {
             });
     }
 
-    handleSendChat = () => {
+    handleSendChat() {
         var content = this.chatInput.value;
         if (!this.chatInput) return;
         socket.emit('new-chat', { content, userId: this.props.user._id, userName: `${this.props.user.firstName} ${this.props.user.lastName}`});
